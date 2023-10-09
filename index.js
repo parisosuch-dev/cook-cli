@@ -2,6 +2,7 @@
 
 const { Command } = require("commander");
 const figlet = require("figlet");
+const fs = require("fs");
 
 program = new Command();
 
@@ -16,8 +17,6 @@ program
   .command("add")
   .description("Add a task to the todo list")
   .argument('"<task>"', "what you gotta do")
-  .action((task, options) => {
-    console.log(task);
-  });
+  .action((task, options) => {});
 
 program.parse();

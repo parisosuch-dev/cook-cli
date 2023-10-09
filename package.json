@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^11.0.0",
-    "figlet": "^1.6.0"
+    "figlet": "^1.6.0",
+    "fs": "^0.0.1-security"
   },
   "bin": {
     "cook": "./bin/index.js"
