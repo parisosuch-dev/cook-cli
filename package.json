@@ -4,6 +4,7 @@
   "description": "A todo list (i am cooking)",
   "main": "index.js",
   "scripts": {
+    "build": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +13,8 @@
   "dependencies": {
     "commander": "^11.0.0",
     "figlet": "^1.6.0"
+  },
+  "bin": {
+    "cook": "index.js"
   }
 }
