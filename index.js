@@ -12,4 +12,12 @@ program
     "A todo list CLI -- nothing to do with actually cooking. It's all a metaphor."
   );
 
+program
+  .command("add")
+  .description("Add a task to the todo list")
+  .argument('"<task>"', "what you gotta do")
+  .action((task, options) => {
+    console.log(task);
+  });
+
 program.parse();
