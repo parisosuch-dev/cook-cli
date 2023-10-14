@@ -18,26 +18,23 @@ program
 program
   .command("add")
   .description("Add a task to the todo list")
-  .argument('"<task>"', "what you gotta do")
-  .action((task, options) => {
+  .argument("<task>", "what you gotta do")
+  .action(function (task) {
+    task = task + "\r\n";
     const homeDir = os.homedir();
     const folder = homeDir + "/.cook";
+    // make .cook folder if not exist
     if (!fs.existsSync(folder)) {
       fs.mkdirSync(folder);
     }
     // write to file
-    fs.writeFileSync(
-      homeDir + "/.cook/to-do.txt",
-      task,
-      { flag: "a+" },
-      (err) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("Task added to list.");
-        }
+    fs.appendFileSync(homeDir + "/.cook/to-do.txt", task, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Task added to list.");
       }
-    );
+    });
   });
 
 program.parse();
