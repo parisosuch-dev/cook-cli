@@ -3,6 +3,8 @@
 const { Command } = require("commander");
 const figlet = require("figlet");
 const fs = require("fs");
+const path = require("path");
+const os = require("os");
 
 program = new Command();
 
@@ -17,6 +19,21 @@ program
   .command("add")
   .description("Add a task to the todo list")
   .argument('"<task>"', "what you gotta do")
-  .action((task, options) => {});
+  .action((task, options) => {
+    const homeDir = os.homedir();
+    const folder = homeDir + "/.cook";
+    if (!fs.existsSync(folder)) {
+      fs.mkdirSync(folder);
+    }
+    // write to file
+    fs.writeFileSync("~/.cook/list.txt", task, { flag: "a+" }, (err) => {
+      if (err) {
+        console.log("3");
+        console.log(err);
+      } else {
+        console.log("Task added to list.");
+      }
+    });
+  });
 
 program.parse();
