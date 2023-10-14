@@ -50,8 +50,8 @@ program
       }
       let arr = data.split("\n");
       arr.splice(-1);
-      arr.forEach((todo) => {
-        console.log("[] " + todo);
+      arr.forEach((todo, i) => {
+        console.log(i + 1 + ".)" + " [] " + todo);
       });
     });
   });
