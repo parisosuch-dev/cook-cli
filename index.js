@@ -17,6 +17,7 @@ program
   .version("1.0.0")
   .description(
     "A todo list CLI -- nothing to do with actually cooking. It's all a metaphor."
+      .cyan
   );
 
 program
@@ -43,7 +44,7 @@ program
 
 program
   .command("list")
-  .description("list all in to-do.")
+  .description("list all in to-do")
   .action(() => {
     // read file contents and console out
     fs.readFile(todoFile, "utf-8", (err, data) => {
@@ -63,7 +64,7 @@ program
 
 program
   .command("check")
-  .description("check off an item on the to-do list!")
+  .description("check off an item on the to-do list")
   .argument("<index>")
   .action((index) => {
     // remove item from to-do list
