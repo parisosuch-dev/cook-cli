@@ -56,4 +56,27 @@ program
     });
   });
 
+program
+  .command("check")
+  .description("check off an item on the to-do list!")
+  .argument("<index>")
+  .action((index) => {
+    // remove item from to-do list
+    index = parseInt(index);
+    const homeDir = os.homedir();
+    const todoFile = homeDir + "/.cook/to-do.txt";
+    fs.readFile(todoFile, "utf-8", (err, data) => {
+      if (err) {
+        throw err;
+      }
+      let linesExceptIndex = data.split("\n").slice(index).join("\n");
+      // write new lines to file
+      fs.writeFile(todoFile, linesExceptIndex, (err, data) => {
+        if (err) {
+          throw err;
+        }
+      });
+    });
+  });
+
 program.parse();
