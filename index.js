@@ -24,7 +24,7 @@ program
   .command("add")
   .description("Add a task to the todo list")
   .argument("<task>", "what you gotta do")
-  .action(function (task) {
+  .action((task) => {
     task = task + "\r\n";
     const homeDir = os.homedir();
     const folder = homeDir + "/.cook";
