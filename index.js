@@ -8,10 +8,6 @@ const os = require("os");
 
 program = new Command();
 
-const homeDir = os.homedir();
-const folder = homeDir + "/.cook";
-const todoFile = folder + "/to-do.txt";
-
 program
   .name("cook")
   .version("1.0.0")
@@ -25,21 +21,7 @@ program
   .description("Add a task to the todo list")
   .argument("<task>", "what you gotta do")
   .action((task) => {
-    task = task + "\r\n";
-    const homeDir = os.homedir();
-    const folder = homeDir + "/.cook";
-    // make .cook folder if not exist
-    if (!fs.existsSync(folder)) {
-      fs.mkdirSync(folder);
-    }
-    // write to file
-    fs.appendFileSync(homeDir + "/.cook/to-do.txt", task, (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Task added to list.");
-      }
-    });
+    
   });
 
 program
