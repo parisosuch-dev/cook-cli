@@ -6,6 +6,7 @@ const colors = require("colors");
 const fs = require("fs");
 // core
 const addTask = require("./core.js");
+const listTasks = require("./core.js");
 
 program = new Command();
 
@@ -29,21 +30,7 @@ program
   .command("list")
   .description("list all in to-do")
   .action(() => {
-    // read file contents and console out
-    fs.readFile(todoFile, "utf-8", (err, data) => {
-      if (err) {
-        throw err;
-      }
-      let arr = data.split("\n");
-      arr.splice(-1);
-      console.log("\nYOUR TO-DO LIST".green);
-      console.log("===============\n".green);
-      arr.forEach((todo, i) => {
-        let pos = (i + 1).toString();
-        index = "(" + pos + ") ";
-        console.log(index.gray + todo.cyan);
-      });
-    });
+    listTasks();
   });
 
 program

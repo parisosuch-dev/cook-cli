@@ -21,4 +21,23 @@ const addTask = (task) => {
   });
 };
 
+const listTasks = () => {
+  // read file contents and console out
+  fs.readFile(todoFile, "utf-8", (err, data) => {
+    if (err) {
+      throw err;
+    }
+    let arr = data.split("\n");
+    arr.splice(-1);
+    console.log("\nYOUR TO-DO LIST".green);
+    console.log("===============\n".green);
+    arr.forEach((todo, i) => {
+      let pos = (i + 1).toString();
+      index = "(" + pos + ") ";
+      console.log(index.gray + todo.cyan);
+    });
+  });
+};
+
 module.exports = addTask;
+module.exports = listTasks;
