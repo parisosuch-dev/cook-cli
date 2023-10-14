@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.4.0",
     "commander": "^11.0.0",
     "figlet": "^1.6.0",
     "fs": "^0.0.1-security"
