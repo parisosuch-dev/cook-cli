@@ -2,8 +2,8 @@
 
 const { Command } = require("commander");
 const figlet = require("figlet");
+const colors = require("colors");
 const fs = require("fs");
-const path = require("path");
 const os = require("os");
 
 program = new Command();
@@ -52,8 +52,11 @@ program
       }
       let arr = data.split("\n");
       arr.splice(-1);
+      console.log("\nYour to-do list:\n".magenta);
       arr.forEach((todo, i) => {
-        console.log(i + 1 + ".)" + " [] " + todo);
+        let pos = (i + 1).toString();
+        index = "(" + pos + ") ";
+        console.log(index.gray + todo.cyan);
       });
     });
   });
@@ -76,7 +79,7 @@ program
       fs.writeFile(todoFile, linesExceptIndex, (err, data) => {
         if (err) {
           throw err;
-        } 
+        }
       });
     });
   });
