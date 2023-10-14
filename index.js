@@ -8,6 +8,10 @@ const os = require("os");
 
 program = new Command();
 
+const homeDir = os.homedir();
+const folder = homeDir + "/.cook";
+const todoFile = folder + "/to-do.txt";
+
 program
   .name("cook")
   .version("1.0.0")
@@ -41,8 +45,6 @@ program
   .command("list")
   .description("list all in to-do.")
   .action(() => {
-    const homeDir = os.homedir();
-    const todoFile = homeDir + "/.cook/to-do.txt";
     // read file contents and console out
     fs.readFile(todoFile, "utf-8", (err, data) => {
       if (err) {
@@ -63,8 +65,6 @@ program
   .action((index) => {
     // remove item from to-do list
     index = parseInt(index);
-    const homeDir = os.homedir();
-    const todoFile = homeDir + "/.cook/to-do.txt";
     fs.readFile(todoFile, "utf-8", (err, data) => {
       if (err) {
         throw err;
