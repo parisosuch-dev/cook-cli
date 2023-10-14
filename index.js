@@ -53,7 +53,8 @@ program
       }
       let arr = data.split("\n");
       arr.splice(-1);
-      console.log("\nYour to-do list:\n".magenta);
+      console.log("\nYOUR TO-DO LIST".green);
+      console.log("===============\n".green);
       arr.forEach((todo, i) => {
         let pos = (i + 1).toString();
         index = "(" + pos + ") ";
