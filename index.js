@@ -26,14 +26,18 @@ program
       fs.mkdirSync(folder);
     }
     // write to file
-    fs.writeFileSync("~/.cook/list.txt", task, { flag: "a+" }, (err) => {
-      if (err) {
-        console.log("3");
-        console.log(err);
-      } else {
-        console.log("Task added to list.");
+    fs.writeFileSync(
+      homeDir + "/.cook/to-do.txt",
+      task,
+      { flag: "a+" },
+      (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Task added to list.");
+        }
       }
-    });
+    );
   });
 
 program.parse();
