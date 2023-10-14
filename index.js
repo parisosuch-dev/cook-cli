@@ -37,22 +37,7 @@ program
   .description("check off an item on the to-do list")
   .argument("<index>")
   .action((index) => {
-    // remove item from to-do list
-    index = parseInt(index) - 1;
-    fs.readFile(todoFile, "utf-8", (err, data) => {
-      if (err) {
-        throw err;
-      }
-      let linesExceptIndex = data.split("\n");
-      linesExceptIndex.splice(index, 1);
-      linesExceptIndex = linesExceptIndex.join("\n");
-      // write new lines to file
-      fs.writeFile(todoFile, linesExceptIndex, (err, data) => {
-        if (err) {
-          throw err;
-        }
-      });
-    });
+    core.checkTask(index);
   });
 
 program.parse();
