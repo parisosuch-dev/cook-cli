@@ -39,5 +39,7 @@ const listTasks = () => {
   });
 };
 
-module.exports = addTask;
-module.exports = listTasks;
+module.exports = {
+  addTask,
+  listTasks,
+};
