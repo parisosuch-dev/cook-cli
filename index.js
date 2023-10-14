@@ -37,4 +37,23 @@ program
     });
   });
 
+program
+  .command("list")
+  .description("list all in to-do.")
+  .action(() => {
+    const homeDir = os.homedir();
+    const todoFile = homeDir + "/.cook/to-do.txt";
+    // read file contents and console out
+    fs.readFile(todoFile, "utf-8", (err, data) => {
+      if (err) {
+        throw err;
+      }
+      let arr = data.split("\n");
+      arr.splice(-1);
+      arr.forEach((todo) => {
+        console.log("[] " + todo);
+      });
+    });
+  });
+
 program.parse();
