@@ -1,3 +1,6 @@
+const os = require("os");
+const fs = require("fs");
+
 const homeDir = os.homedir();
 const folder = homeDir + "/.cook";
 const todoFile = folder + "/to-do.txt";
@@ -17,3 +20,5 @@ const addTask = (task) => {
     }
   });
 };
+
+module.exports = addTask;

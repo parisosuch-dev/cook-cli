@@ -4,7 +4,8 @@ const { Command } = require("commander");
 const figlet = require("figlet");
 const colors = require("colors");
 const fs = require("fs");
-const os = require("os");
+// core
+const addTask = require("./core.js");
 
 program = new Command();
 
@@ -21,7 +22,7 @@ program
   .description("Add a task to the todo list")
   .argument("<task>", "what you gotta do")
   .action((task) => {
-    
+    addTask(task);
   });
 
 program
