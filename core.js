@@ -48,11 +48,13 @@ const getLineCount = () => {
 
 const checkTask = (index) => {
   // remove item from to-do list
-  index = parseInt(index) - 1;
+  index = parseInt(index);
   let lineCount = getLineCount();
 
-  console.log(lineCount);
-  throw '';
+  if (index > lineCount | index < 0) {
+    console.log("Index out of bounds. Check list for indices.");
+    return;
+  }
 
   fs.readFile(todoFile, "utf-8", (err, data) => {
     if (err) {
