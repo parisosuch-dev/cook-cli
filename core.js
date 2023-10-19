@@ -52,7 +52,7 @@ const checkTask = (index) => {
   // remove item from to-do list
   index = parseInt(index);
   let lineCount = util.getLineCount();
-
+  console.log(lineCount)
   if (index > lineCount | index <= 0) {
     console.log("Index out of bounds. Check list for indices.".red);
     return;
@@ -63,7 +63,7 @@ const checkTask = (index) => {
       throw err;
     }
     let linesExceptIndex = data.split("\n");
-    linesExceptIndex.splice(index, 1);
+    linesExceptIndex.splice(index - 1, 1);
     linesExceptIndex = linesExceptIndex.join("\n");
     // write new lines to file
     fs.writeFile(todoFile, linesExceptIndex, (err, data) => {
