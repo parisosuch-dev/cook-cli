@@ -51,7 +51,7 @@ const checkTask = (index) => {
   index = parseInt(index);
   let lineCount = getLineCount();
 
-  if (index > lineCount | index < 0) {
+  if (index > lineCount | index <= 0) {
     console.log("Index out of bounds. Check list for indices.");
     return;
   }
