@@ -1,4 +1,5 @@
 const os = require("os");
+const readline = require("readline");
 const fs = require("fs");
 
 const homeDir = os.homedir();
@@ -39,9 +40,22 @@ const listTasks = () => {
   });
 };
 
+const getLineCount = () => {
+  var data = fs.readFileSync(todoFile);
+  var res = data.toString().split('\n').length;
+  return res - 1;
+};
+
 const checkTask = (index) => {
   // remove item from to-do list
-  index = parseInt(index) - 1;
+  index = parseInt(index);
+  let lineCount = getLineCount();
+
+  if (index > lineCount | index <= 0) {
+    console.log("Index out of bounds. Check list for indices.");
+    return;
+  }
+
   fs.readFile(todoFile, "utf-8", (err, data) => {
     if (err) {
       throw err;
