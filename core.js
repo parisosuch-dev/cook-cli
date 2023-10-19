@@ -73,6 +73,9 @@ const checkTask = (index) => {
     });
   });
   console.log("Task removed from list.".cyan)
+  if (lineCount - 1 == 0) {
+    console.log("You have no more tasks on your TO-DO list!".green);
+  }
 };
 
 module.exports = {
