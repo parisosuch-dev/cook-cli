@@ -52,7 +52,6 @@ const checkTask = (index) => {
   // remove item from to-do list
   index = parseInt(index);
   let lineCount = util.getLineCount();
-  console.log(lineCount)
   if (index > lineCount | index <= 0) {
     console.log("Index out of bounds. Check list for indices.".red);
     return;
