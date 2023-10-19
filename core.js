@@ -17,6 +17,7 @@ const addTask = (task) => {
   fs.appendFileSync(homeDir + "/.cook/to-do.txt", task, (err) => {
     if (err) {
       console.log(err);
+      return;
     } else {
       console.log("Task added to list.");
     }
@@ -27,7 +28,8 @@ const listTasks = () => {
   // check to see if to-do list is empty
   let lineCount = util.getLineCount();
   if (lineCount == 0) {
-    console.log("TO-DO list empty! Add a task.");
+    console.log("TO-DO list empty! Add a task.".red);
+    console.log("To Add Task: ".magenta + 'cook add "{task}"'.cyan);
     return;
   }
   // read file contents and console out
