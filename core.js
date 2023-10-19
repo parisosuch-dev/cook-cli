@@ -1,6 +1,7 @@
 const os = require("os");
 const readline = require("readline");
 const fs = require("fs");
+const util = require("./util.js")
 
 const homeDir = os.homedir();
 const folder = homeDir + "/.cook";
@@ -23,6 +24,12 @@ const addTask = (task) => {
 };
 
 const listTasks = () => {
+  // check to see if to-do list is empty
+  let lineCount = util.getLineCount();
+  if (lineCount == 0) {
+    console.log("TO-DO list empty! Add a task.");
+    return;
+  }
   // read file contents and console out
   fs.readFile(todoFile, "utf-8", (err, data) => {
     if (err) {
@@ -40,16 +47,10 @@ const listTasks = () => {
   });
 };
 
-const getLineCount = () => {
-  var data = fs.readFileSync(todoFile);
-  var res = data.toString().split('\n').length;
-  return res - 1;
-};
-
 const checkTask = (index) => {
   // remove item from to-do list
   index = parseInt(index);
-  let lineCount = getLineCount();
+  let lineCount = util.getLineCount();
 
   if (index > lineCount | index <= 0) {
     console.log("Index out of bounds. Check list for indices.");
