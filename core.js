@@ -18,10 +18,9 @@ const addTask = (task) => {
     if (err) {
       console.log(err);
       return;
-    } else {
-      console.log("Task added to list.");
     }
   });
+  console.log("Task added to list.".cyan);
 };
 
 const listTasks = () => {
