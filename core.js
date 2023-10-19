@@ -55,7 +55,7 @@ const checkTask = (index) => {
   let lineCount = util.getLineCount();
 
   if (index > lineCount | index <= 0) {
-    console.log("Index out of bounds. Check list for indices.");
+    console.log("Index out of bounds. Check list for indices.".red);
     return;
   }
 
