@@ -38,8 +38,7 @@ const listTasks = () => {
     }
     let arr = data.split("\n");
     arr.splice(-1);
-    console.log("\nYOUR TO-DO LIST".green);
-    console.log("===============\n".green);
+    console.log("YOUR TO-DO LIST:".green);
     arr.forEach((todo, i) => {
       let pos = (i + 1).toString();
       index = "(" + pos + ") ";
