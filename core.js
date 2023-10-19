@@ -24,6 +24,12 @@ const addTask = (task) => {
 };
 
 const listTasks = () => {
+  // check to see if to-do list is empty
+  let lineCount = util.getLineCount();
+  if (lineCount == 0) {
+    console.log("TO-DO list empty! Add a task.");
+    return;
+  }
   // read file contents and console out
   fs.readFile(todoFile, "utf-8", (err, data) => {
     if (err) {
