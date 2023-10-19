@@ -73,6 +73,7 @@ const checkTask = (index) => {
       }
     });
   });
+  console.log("Task removed from list.".cyan)
 };
 
 module.exports = {
