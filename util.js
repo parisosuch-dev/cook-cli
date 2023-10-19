@@ -6,6 +6,9 @@ const folder = homeDir + "/.cook";
 const todoFile = folder + "/to-do.txt";
 
 const getLineCount = () => {
+    if (!fs.existsSync(todoFile)) {
+        return 0;
+    }
     var data = fs.readFileSync(todoFile);
     var res = data.toString().split('\n').length;
     return res - 1;
