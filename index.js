@@ -1,6 +1,6 @@
 #!usr/bin/env node
 
-const { Command } = require("commander");
+const { Command, program } = require("commander");
 const figlet = require("figlet");
 const colors = require("colors");
 const fs = require("fs");
@@ -39,5 +39,9 @@ program
   .action((index) => {
     core.checkTask(index);
   });
+
+program.command("clear").description("clear all items on to-do list").action(() => {
+  // enter action here for clearing
+})
 
 program.parse();
