@@ -40,4 +40,8 @@ program
     core.checkTask(index);
   });
 
+program.command("clear").description("clear all items on to-do list").action(() => {
+  core.clearAll();
+})
+
 program.parse();

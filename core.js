@@ -38,8 +38,7 @@ const listTasks = () => {
     }
     let arr = data.split("\n");
     arr.splice(-1);
-    console.log("\nYOUR TO-DO LIST".green);
-    console.log("===============\n".green);
+    console.log("YOUR TO-DO LIST:".green);
     arr.forEach((todo, i) => {
       let pos = (i + 1).toString();
       index = "(" + pos + ") ";
@@ -77,8 +76,25 @@ const checkTask = (index) => {
   }
 };
 
+const clearAll = () => {
+  // clear all tasks from to-do list
+  // simply by deleting the file! (for now)
+  let lineCount = util.getLineCount();
+  if (lineCount === 0) {
+    console.log("Cannot clear empty to-do list.".red);
+    return;
+  }
+  fs.unlink(todoFile, (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+  console.log("All tasks have been cleared.".green);
+}
+
 module.exports = {
   addTask,
   listTasks,
   checkTask,
+  clearAll
 };
