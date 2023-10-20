@@ -79,7 +79,7 @@ const checkTask = (index) => {
 const clearAll = () => {
   // clear all tasks from to-do list
   // simply by deleting the file! (for now)
-  let lineCount = util.lineCount();
+  let lineCount = util.getLineCount();
   if (lineCount === 0) {
     console.log("Cannot clear empty to-do list.".red);
     return;

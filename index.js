@@ -1,6 +1,6 @@
 #!usr/bin/env node
 
-const { Command, program } = require("commander");
+const { Command } = require("commander");
 const figlet = require("figlet");
 const colors = require("colors");
 const fs = require("fs");
@@ -41,7 +41,7 @@ program
   });
 
 program.command("clear").description("clear all items on to-do list").action(() => {
-  // enter action here for clearing
+  core.clearAll();
 })
 
 program.parse();
