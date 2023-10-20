@@ -76,8 +76,24 @@ const checkTask = (index) => {
   }
 };
 
+const clearAll = () => {
+  // clear all tasks from to-do list
+  // simply by deleting the file! (for now)
+  let lineCount = util.lineCount();
+  if (lineCount === 0) {
+    console.log("Cannot clear empty to-do list.".red);
+    return;
+  }
+  fs.unlink(todoFile, (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
+
 module.exports = {
   addTask,
   listTasks,
   checkTask,
+  clearAll
 };
