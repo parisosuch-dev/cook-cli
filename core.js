@@ -89,6 +89,7 @@ const clearAll = () => {
       console.log(err);
     }
   });
+  console.log("All tasks have been cleared.".green);
 }
 
 module.exports = {
