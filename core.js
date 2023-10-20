@@ -1,5 +1,4 @@
 const os = require("os");
-const readline = require("readline");
 const fs = require("fs");
 const util = require("./util.js")
 
