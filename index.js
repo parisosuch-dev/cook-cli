@@ -1,10 +1,6 @@
 #!usr/bin/env node
 
 const { Command } = require("commander");
-const figlet = require("figlet");
-const colors = require("colors");
-const fs = require("fs");
-// core
 const core = require("./core.js");
 
 program = new Command();
