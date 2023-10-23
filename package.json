@@ -2,7 +2,7 @@
   "name": "cook-cli",
   "version": "1.0.0",
   "description": "A todo list (i am cooking)",
-  "main": "index.js",
+  "main": "./bin/index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,6 +13,6 @@
     "fs": "^0.0.1-security"
   },
   "bin": {
-    "cook": "bin/index.js"
+    "cook": "./bin/index.js"
   }
 }
