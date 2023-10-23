@@ -2,12 +2,13 @@
 
 const { Command } = require("commander");
 const core = require("./core.js");
+const ver = require("./lib/ver.js");
 
 program = new Command();
 
 program
   .name("cook")
-  .version("1.0.0")
+  .version(ver.number)
   .description(
     "A todo list CLI -- nothing to do with actually cooking. It's all a metaphor."
       .cyan
