@@ -13,6 +13,6 @@
     "fs": "^0.0.1-security"
   },
   "bin": {
-    "cook": "./index.js"
+    "cook": "bin/index.js"
   }
 }
