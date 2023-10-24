@@ -17,6 +17,7 @@ program
 
 program
   .command("add")
+  .alias('a')
   .description("Add a task to the todo list")
   .argument("<task>", "what you gotta do")
   .action((task) => {
@@ -25,6 +26,7 @@ program
 
 program
   .command("list")
+  .alias('l')
   .description("list all in to-do")
   .action(() => {
     core.listTasks();
@@ -32,6 +34,7 @@ program
 
 program
   .command("check")
+  .alias('c')
   .description("check off an item on the to-do list")
   .argument("<index>")
   .action((index) => {
