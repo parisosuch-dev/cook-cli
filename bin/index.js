@@ -27,9 +27,10 @@ program
 program
   .command("list")
   .alias('l')
+  .option('-t', '--time')
   .description("list all in to-do")
-  .action(() => {
-    core.listTasks();
+  .action((option) => {
+    core.listTasks(option.t);
   });
 
 program
