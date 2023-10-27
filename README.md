@@ -5,6 +5,8 @@ An open source todo list for a better DX. Cook in real time. 🍳
 
 *Made with [commander.js](https://github.com/tj/commander.js)*
 
+**⚠️ currently in pre-release.**
+
 ## Installation
 cook-cli has not been added to the npm registry yet. (soon)
 
