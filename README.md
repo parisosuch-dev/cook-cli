@@ -11,7 +11,7 @@ An open source todo list for a better DX. Cook in real time. 🍳
 cook-cli has not been added to the npm registry yet. (soon)
 
 ```sh
-$ sudo npm install -g https://github.com/parisosuch-dev/cook-cli
+$ npm install -g https://github.com/parisosuch-dev/cook-cli
 ```
 
 **You must install npm package globally in order to add the binary to your path.**
