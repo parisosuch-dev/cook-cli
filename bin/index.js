@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { Command, program } = require("commander");
+const { Command } = require("commander");
 const colors = require("colors");
 const core = require("../lib/core.js");
 const pckg = require("../package.json");
