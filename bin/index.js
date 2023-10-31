@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { Command } = require("commander");
+const { Command, program } = require("commander");
 const colors = require("colors");
 const core = require("../lib/core.js");
 const pckg = require("../package.json");
@@ -44,6 +44,10 @@ program
 
 program.command("clear").description("clear all items on to-do list").action(() => {
   core.clearAll();
+})
+
+program.command("remove").description("remove item from to-do list (does not mark as complete)").argument("<index>").action((index) => {
+  core.removeTask(index);
 })
 
 program.parse(process.argv);
