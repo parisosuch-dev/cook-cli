@@ -47,13 +47,20 @@ program
   .description("clear all items on to-do list")
   .action(() => {
     core.clearAll();
-  })
+  });
 
 program
   .command("remove")
   .description("remove item from to-do list (does not mark as complete)")
   .argument("<index>").action((index) => {
     core.removeTask(index);
+  });
+
+program
+  .command("done")
+  .description("show all done items from to-do list.")
+  .action(() => {
+    core.doneTasks();
   })
 
 program.parse(process.argv);
