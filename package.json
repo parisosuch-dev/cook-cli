@@ -14,5 +14,9 @@
   },
   "bin": {
     "cook": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parisosuch-dev/cook-cli.git"
   }
 }
