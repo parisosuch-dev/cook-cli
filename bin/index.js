@@ -63,4 +63,11 @@ program
     core.doneTasks();
   })
 
+program
+  .command("update")
+  .description("update cook to the latest version.")
+  .action(() => {
+    core.updatePackage();
+  });
+
 program.parse(process.argv);
